@@ -5,3 +5,11 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     return {"message": "Hello World"}
+
+@app.get("/items")
+def get_items():
+    return {"items": ["item1", "item2", "item3"]}
+
+@app.post("/add")
+def add_item(name: str):
+    return {"message": f"{name} added successfully"}
